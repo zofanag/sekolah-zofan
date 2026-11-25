@@ -1,0 +1,51 @@
+/* Layout mengikuti Modul 4 (top, menubar, main, sidebar, bottom) + Media Query Modul 5 */
+* { box-sizing: border-box; }
+body { font: 100% "Lucida Sans", Verdana, sans-serif; margin: 0; padding: 20px; line-height: 1.7; background: #eef3ef; color: #222; }
+#zofan_top { background-color: #04AA6D; color: #fff; padding: 18px; border-radius: 4px; margin: 4px; display: flex; align-items: center; gap: 14px; }
+#zofan_top h1, #zofan_top p { margin: 0; }
+.zofan_logo { font-size: 2.4rem; }
+#zofan_tombol { display: none; margin-left: auto; font-size: 1.4rem; background: #fff; border: 0; border-radius: 4px; padding: 2px 12px; cursor: pointer; }
+.zofan_wrapper { display: flex; gap: 8px; margin: 4px; align-items: flex-start; }
+#zofan_menubar { width: 200px; flex-shrink: 0; }
+#zofan_menulist { margin: 0; padding: 0; }
+.zofan_menuitem { list-style-type: none; background-color: #f1f1f1; border: 1px solid #d4d4d4; border-radius: 4px; margin-bottom: 4px; cursor: pointer; transition: .3s; }
+.zofan_menuitem a { display: block; padding: 6px 10px; color: #000; text-decoration: none; }
+.zofan_menuitem:hover { background-color: #fff; }
+.zofan_menuitem.zofan_aktif { background-color: #04AA6D; font-weight: bold; }
+.zofan_menuitem.zofan_aktif a { color: #fff; }
+#zofan_main { flex: 1; min-width: 0; background: #fff; padding: 18px; border: 1px solid #d4d4d4; border-radius: 4px; }
+#zofan_main h2 { color: #04AA6D; margin-top: 0; }
+#zofan_sidebar { width: 220px; flex-shrink: 0; background-color: #32a4e7; color: #fff; padding: 14px; border-radius: 4px; }
+#zofan_sidebar h3 { margin-top: 0; }
+#zofan_jam { font-size: 1.6rem; font-weight: bold; }
+#zofan_bottom { border: 1px solid #d4d4d4; background-color: #f1f1f1; text-align: center; padding: 12px; border-radius: 4px; margin: 4px; font-size: 90%; }
+a { color: #0b6e4f; }
+.zofan_grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.zofan_kartu { flex: 1 1 200px; background: #f6faf7; border: 1px solid #cfe3d6; border-radius: 6px; padding: 14px; }
+.zofan_kartu:hover { box-shadow: 0 3px 8px rgba(0,0,0,.15); }
+.zofan_acc { width: 100%; text-align: left; background: #04AA6D; color: #fff; border: 0; border-radius: 4px; padding: 10px 14px; margin-top: 8px; font: inherit; cursor: pointer; }
+.zofan_panel { display: none; padding: 10px 14px; background: #f1f1f1; border-radius: 0 0 4px 4px; }
+.zofan_panel.zofan_buka { display: block; }
+.zofan_foto { flex: 1 1 150px; height: 120px; border-radius: 6px; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 2rem; cursor: pointer; }
+form { display: grid; gap: 10px; max-width: 480px; }
+input, textarea { padding: 10px; border: 1px solid #bbb; border-radius: 4px; font: inherit; width: 100%; }
+button.zofan_kirim { background: #04AA6D; color: #fff; border: 0; border-radius: 4px; padding: 10px; font: inherit; cursor: pointer; }
+.zofan_pesan { font-weight: bold; }
+.zofan_salah { color: #c0392b; }
+.zofan_ok { color: #04AA6D; }
+/* Media Query: tablet */
+@media screen and (max-width: 992px) { .zofan_wrapper { flex-wrap: wrap; } #zofan_sidebar { width: 100%; order: 3; } }
+/* Media Query: mobile */
+@media screen and (max-width: 700px) {
+  body { padding: 8px; }
+  .zofan_wrapper { flex-direction: column; }
+  #zofan_menubar { width: 100%; display: none; }
+  #zofan_menubar.zofan_buka { display: block; }
+  #zofan_main { width: 100%; order: 1; }
+  #zofan_tombol { display: block; }
+}
+
+.zofan_logo { height: 56px; width: 56px; border-radius: 50%; background: #fff; object-fit: cover; }
+img.zofan_foto { height: 150px; width: 100%; object-fit: cover; background: #ccc; }
+.zofan_kepsek { float: left; width: 130px; border-radius: 6px; margin: 0 14px 8px 0; }
+.zofan_sumber { font-size: 85%; color: #666; clear: both; }
